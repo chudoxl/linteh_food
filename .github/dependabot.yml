@@ -1,0 +1,43 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: ci
+      include: scope
+    labels:
+      - dependencies
+      - github-actions
+
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: deps
+      include: scope
+    labels:
+      - dependencies
+      - gradle
+    groups:
+      androidx:
+        patterns:
+          - "androidx.*"
+      compose:
+        patterns:
+          - "androidx.compose*"
+          - "org.jetbrains.kotlin:kotlin-compose*"
+      testing:
+        patterns:
+          - "*truth*"
+          - "*mockk*"
+          - "*turbine*"
+          - "*robolectric*"
+          - "*junit*"
+          - "androidx.test*"
