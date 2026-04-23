@@ -1,6 +1,6 @@
 [versions]
 aboutLibraries = "14.0.1"
-agp = "9.1.1"
+agp = "9.2.0"
 markdownRendererM3 = "0.40.2"
 datetimeWheelPicker = "1.1.1"
 kotlin = "2.3.20"
